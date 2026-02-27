@@ -1,0 +1,1 @@
+This website is intended for personal use only. All images belong to their respective owners, and are only being used for displaying the music artists I've worked with. 

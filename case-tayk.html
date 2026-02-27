@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tay-K | Jose Villicana Brugada</title>
+  <meta name="description" content="Broke Records / Create Music Group organic Instagram campaign for Tay-K — 13.3M views, 280K interactions.">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://use.typekit.net/jzg6dwl.css">
+
+  <style>
+    /* ── RESET ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── ROOT TOKENS ── */
+    :root {
+      --pad: calc(4rem + 2px);
+      --text: rgba(0, 0, 0, 0.85);
+      --text-muted: rgba(0, 0, 0, 0.4);
+      --border: rgba(0, 0, 0, 0.12);
+      --blue: rgb(115, 171, 235);
+    }
+
+    /* ── BASE ── */
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      background: #fff;
+      letter-spacing: -0.02em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── CURSOR ── */
+    * { cursor: none !important; }
+    .cursor {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.15s ease, height 0.15s ease;
+      will-change: left, top;
+    }
+
+    /* ── BACK BUTTON ── */
+    .back-btn {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.75rem;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      background: rgba(0,0,0,0.28);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.45rem 0.85rem 0.45rem 0.65rem;
+      border-radius: 100px;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .back-btn:hover { background: rgba(0,0,0,0.45); text-decoration: none; }
+    .back-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── HERO ── */
+    .case-hero {
+      min-height: 90vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 5rem var(--pad);
+      overflow: hidden;
+    }
+    .case-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('tay_k_cover.jpg');
+      background-size: cover;
+      background-position: center;
+      background-color: #0f0f0f;
+    }
+    .case-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.85) 100%);
+    }
+    .case-hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .case-hero-label {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.9rem;
+    }
+    .case-hero-title {
+      font-family: 'coolvetica', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: white;
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+    }
+    .case-hero-stats {
+      display: flex;
+      gap: 4rem;
+    }
+    .case-hero-stat-value {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .case-hero-stat-label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── DIVIDER ── */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      padding: 2rem var(--pad) 1.5rem;
+      font-family: 'coolvetica', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    /* ── OVERVIEW ── */
+    .overview-body {
+      padding: 0 var(--pad) 4rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      column-gap: 4rem;
+      row-gap: 1.5rem;
+    }
+    .overview-text { grid-column: 1; grid-row: 1; }
+    .meta-card { grid-column: 2; grid-row: 1 / 3; }
+    .overview-text {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--text);
+      opacity: 0.8;
+    }
+    .overview-text p + p { margin-top: 1.25rem; }
+
+    /* ── META CARD ── */
+    .meta-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+    .meta-card-title {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .meta-row {
+      display: flex;
+      flex-direction: column;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .meta-row:first-of-type { padding-top: 0; }
+    .meta-label {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* ── SPOTIFY EMBED ── */
+    .spotify-wrap { grid-column: 1; grid-row: 2; }
+
+    /* ── MOODBOARD ── */
+    .moodboard-body {
+      padding: 0 var(--pad) 6rem;
+    }
+
+    /* ── CURATED CONTENT ── */
+    .curated-content-body {
+      padding: 0 var(--pad) 6rem;
+    }
+    .content-group {
+      margin-bottom: 4.5rem;
+    }
+    .content-group-label {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 50%;
+      margin-bottom: 1.75rem;
+      opacity: 0.8;
+    }
+    .content-group-label strong {
+      font-weight: 500;
+    }
+    .content-posts-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .content-posts-row img {
+      flex: 1;
+      min-width: 0;
+      display: block;
+      border-radius: 3px;
+    }
+    .content-posts-row.posts-3 {
+      max-width: 78%;
+      margin: 0 auto;
+      gap: 1.15rem;
+    }
+    .content-posts-row.posts-2 {
+      max-width: 52%;
+      margin: 0 auto;
+      gap: 1.15rem;
+    }
+    .content-posts-row.posts-1 {
+      justify-content: center;
+    }
+    .content-posts-row.posts-1 img {
+      flex: none;
+      width: 28%;
+    }
+
+    /* ── CAMPAIGN OUTCOMES ── */
+    .outcomes-body {
+      padding: 0 var(--pad) 6rem;
+    }
+    .outcomes-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    .outcomes-col-label {
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .outcomes-col-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text);
+      opacity: 0.8;
+    }
+    .outcomes-col-text strong {
+      font-weight: 600;
+      opacity: 1;
+    }
+    .outcomes-image {
+      display: block;
+      width: 52%;
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+
+    /* ── BACK HOME ── */
+    .back-home-wrap {
+      text-align: center;
+      padding: 3rem var(--pad) 5rem;
+    }
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      background: rgba(0,0,0,0.07);
+      padding: 0.45rem 0.85rem 0.45rem 0.65rem;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+    .back-home-btn:hover { background: rgba(0,0,0,0.13); text-decoration: none; }
+    .back-home-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      :root { --pad: 2rem; }
+      .section-heading { font-size: 3rem; }
+      .overview-body { grid-template-columns: 1fr; }
+      .outcomes-cols { grid-template-columns: 1fr; }
+      .case-hero-stats { flex-wrap: wrap; gap: 2rem; }
+      .case-hero { padding: 5rem 2rem; }
+      .content-group-label { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn" id="back-link">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="case-hero-bg"></div>
+    <div class="case-hero-overlay"></div>
+    <div class="case-hero-content">
+      <div class="case-hero-label">Broke Records · Create Music Group</div>
+      <h1 class="case-hero-title">Tay-K — Half Off</h1>
+      <div class="case-hero-stats">
+        <div>
+          <span class="case-hero-stat-value">13.3M</span>
+          <span class="case-hero-stat-label">Total Views</span>
+        </div>
+        <div>
+          <span class="case-hero-stat-value">280K</span>
+          <span class="case-hero-stat-label">Interactions</span>
+        </div>
+        <div>
+          <span class="case-hero-stat-value">5</span>
+          <span class="case-hero-stat-label">Organic Features</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Campaign Overview -->
+  <hr class="section-rule">
+  <div class="section-heading">Campaign Overview</div>
+  <div class="overview-body">
+    <div class="overview-text">
+      <p>
+        Tay-K is one of the underground rap scene's most influential figures, also known for being incarcerated until the mid-2060s after being sentenced as a teenager. He was convicted in connection with the events surrounding his song "The Race." While behind bars, his label unveiled previously unreleased projects in 2025 after seven years without new releases. His name remains widely recognized in rap, and it was my task to re-engage longtime listeners while introducing new audiences to the music.
+      </p>
+      <p>
+        In partnership with Broke Records, operated by Create Music Group, I positioned Tay-K's new releases in front of LIBRARIES followers through organic content that aligned with the updated sound. Their goal was to drive strong engagement, and the campaign delivered more than ten million impressions through organic audio placements and a feature post that placed Tay-K at the center while contextualizing his story.
+      </p>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card-title">Campaign Details</div>
+      <div class="meta-row">
+        <span class="meta-label">Client</span>
+        <span class="meta-value">Broke Records / Create Music Group</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Artist</span>
+        <span class="meta-value">Tay-K</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Platform</span>
+        <span class="meta-value">Instagram (@libraries)</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Campaign Type</span>
+        <span class="meta-value">Organic Feature Posts</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Genre</span>
+        <span class="meta-value">Rap</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Posts Published</span>
+        <span class="meta-value">5 Features</span>
+      </div>
+    </div>
+    <div class="spotify-wrap">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/2ODbg2404zUzTi02qIPEjB?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Curated Content -->
+  <hr class="section-rule">
+  <div class="section-heading">Curated Content</div>
+  <div class="curated-content-body">
+
+    <!-- Group 1 -->
+    <div class="content-group">
+      <p class="content-group-label"><strong>1. AUDIO EMBEDS:</strong> I curated five posts to support the rollout of Tay-K's new releases, including Coolin and Half Off. Each placement was intentionally selected to reflect the image he originally built, as the sound remained consistent with what listeners already associated with him.</p>
+      <div class="content-posts-row posts-3">
+        <img src="tay-k-post1.jpeg" alt="Tay-K Post 1">
+        <img src="tay-k-post3.jpeg" alt="Tay-K Post 3">
+        <img src="tay-k-post2.jpeg" alt="Tay-K Post 2">
+      </div>
+    </div>
+
+    <!-- Group 2 -->
+    <div class="content-group">
+      <p class="content-group-label"><strong>2. DIRECT FEATURE:</strong> Since Tay-K has been an established name for a decade now, it wasn't necessary to introduce him subtly. Instead, the approach of this campaign was to directly gain attention off of his situation, that being his jail time and his legacy.</p>
+      <div class="content-posts-row posts-1">
+        <img src="tay-k-post4.jpeg" alt="Tay-K Post 4">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Campaign Outcomes -->
+  <hr class="section-rule">
+  <div class="section-heading">Campaign Outcomes</div>
+  <div class="outcomes-body">
+    <div class="outcomes-cols">
+      <div>
+        <div class="outcomes-col-label">Stats</div>
+        <p class="outcomes-col-text">The campaign generated significant reach across the LIBRARIES platform, totaling <strong>13.3 million views and 280,000 interactions</strong> across five organic features supporting the rollout of Coolin and Half Off. One standalone post alone surpassed <strong>1.1 million views</strong> and approached <strong>100,000 likes,</strong> reinforcing how strongly name recognition can continue to drive attention even nearly a decade after an artist's initial rise. Tay-K grew back to <strong>3 million monthly listeners</strong> after the launch of this targeted campaign.</p>
+      </div>
+      <div>
+        <div class="outcomes-col-label">What I Learned</div>
+        <p class="outcomes-col-text">Working with an established artist presented a more direct strategic process compared to introducing a new act. Because the identity, audience expectations, and sonic direction were already defined, the focus shifted from discovery to re-engagement. This project strengthened my ability to reactivate existing cultural awareness, position releases in a way that felt true to the legacy of the artist, and execute content that met both label goals and audience familiarity without needing to build context from the ground up.</p>
+      </div>
+    </div>
+    <img src="tay-k-finalimage.jpg" alt="Tay-K" class="outcomes-image">
+  </div>
+
+  <!-- Back Home -->
+  <div class="back-home-wrap">
+    <a href="index.html" class="back-home-btn" id="back-home-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back Home
+    </a>
+  </div>
+
+  <script>
+    // Cursor
+    (function() {
+      var cursor = document.querySelector('.cursor');
+      document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+      });
+    })();
+  </script>
+
+  <script>
+    // Page fade + back navigation
+    (function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() { document.body.style.opacity = '1'; });
+      });
+      ['back-link', 'back-home-link'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.style.opacity = '0';
+            setTimeout(function() { window.location.href = 'index.html'; }, 260);
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

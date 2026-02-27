@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feng — Weekend Rockstar | Jose Villicana Brugada</title>
+  <meta name="description" content="Capitol Records organic Instagram audio campaign for underground rapper Feng — 2.5M views, 646K interactions.">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://use.typekit.net/jzg6dwl.css">
+
+  <style>
+    /* ── RESET ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── ROOT TOKENS ── */
+    :root {
+      --pad: calc(4rem + 2px);
+      --text: rgba(0, 0, 0, 0.85);
+      --text-muted: rgba(0, 0, 0, 0.4);
+      --border: rgba(0, 0, 0, 0.12);
+      --blue: rgb(115, 171, 235);
+    }
+
+    /* ── BASE ── */
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      background: #fff;
+      letter-spacing: -0.02em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── CURSOR ── */
+    * { cursor: none !important; }
+    .cursor {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.15s ease, height 0.15s ease;
+      will-change: left, top;
+    }
+
+    /* ── BACK BUTTON ── */
+    .back-btn {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.75rem;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      background: rgba(0,0,0,0.28);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.45rem 0.85rem 0.45rem 0.65rem;
+      border-radius: 100px;
+      transition: background 0.2s, opacity 0.2s;
+    }
+    .back-btn:hover { background: rgba(0,0,0,0.45); text-decoration: none; }
+    .back-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── HERO ── */
+    .case-hero {
+      min-height: 90vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 5rem var(--pad);
+      overflow: hidden;
+    }
+    .case-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('Feng.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-color: #0f0f0f;
+    }
+    .case-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.85) 100%);
+    }
+    .case-hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .case-hero-label {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.9rem;
+    }
+    .case-hero-title {
+      font-family: 'coolvetica', sans-serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      color: white;
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+    }
+    .case-hero-stats {
+      display: flex;
+      gap: 4rem;
+    }
+    .case-hero-stat-value {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .case-hero-stat-label {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── DIVIDER ── */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      padding: 2rem var(--pad) 1.5rem;
+      font-family: 'coolvetica', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    /* ── OVERVIEW ── */
+    .overview-body {
+      padding: 0 var(--pad) 4rem;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      column-gap: 4rem;
+      row-gap: 1.5rem;
+    }
+    .overview-text { grid-column: 1; grid-row: 1; }
+    .meta-card { grid-column: 2; grid-row: 1 / 3; }
+    .overview-text {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--text);
+      opacity: 0.8;
+    }
+    .overview-text p + p { margin-top: 1.25rem; }
+
+    /* ── META CARD ── */
+    .meta-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+    .meta-card-title {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .meta-row {
+      display: flex;
+      flex-direction: column;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .meta-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .meta-row:first-of-type { padding-top: 0; }
+    .meta-label {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+    .meta-value {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* ── SPOTIFY EMBED ── */
+    .spotify-wrap { grid-column: 1; grid-row: 2; }
+
+    /* ── MOODBOARD ── */
+    .moodboard-body {
+      padding: 0 var(--pad) 6rem;
+    }
+
+    /* ── CURATED CONTENT ── */
+    .curated-content-body {
+      padding: 0 var(--pad) 6rem;
+    }
+    .content-group {
+      margin-bottom: 4.5rem;
+    }
+    .content-group-label {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--text);
+      max-width: 50%;
+      margin-bottom: 1.75rem;
+      opacity: 0.8;
+    }
+    .content-group-label strong {
+      font-weight: 500;
+    }
+    .content-posts-row {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .content-posts-row img {
+      flex: 1;
+      min-width: 0;
+      display: block;
+      border-radius: 3px;
+    }
+    .content-posts-row.posts-3 {
+      max-width: 78%;
+      margin: 0 auto;
+      gap: 1.15rem;
+    }
+    .content-posts-row.posts-2 {
+      max-width: 52%;
+      margin: 0 auto;
+      gap: 1.15rem;
+    }
+    .content-posts-row.posts-1 {
+      justify-content: center;
+    }
+    .content-posts-row.posts-1 img {
+      flex: none;
+      width: 28%;
+    }
+
+    /* ── IRL CONTENT ── */
+    .irl-body {
+      padding: 0 var(--pad) 6rem;
+    }
+    .irl-grid {
+      display: grid;
+      grid-template-columns: 1fr 494px;
+      column-gap: 5rem;
+      align-items: start;
+    }
+    .irl-text {
+      font-size: 1.15rem;
+      line-height: 1.75;
+      color: var(--text);
+      opacity: 0.8;
+    }
+    .irl-text p + p { margin-top: 1.25rem; }
+    .irl-photos {
+      margin-top: 2.5rem;
+      width: 88.5%;
+      display: block;
+    }
+    .irl-post {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* ── CAMPAIGN OUTCOMES ── */
+    .outcomes-body {
+      padding: 0 var(--pad) 6rem;
+    }
+    .outcomes-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    .outcomes-col-label {
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .outcomes-col-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text);
+      opacity: 0.8;
+    }
+    .outcomes-col-text strong {
+      font-weight: 600;
+      opacity: 1;
+    }
+    .outcomes-image {
+      display: block;
+      width: 52%;
+      margin: 0 auto;
+      border-radius: 3px;
+    }
+
+    /* ── BACK HOME ── */
+    .back-home-wrap {
+      text-align: center;
+      padding: 3rem var(--pad) 5rem;
+    }
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      background: rgba(0,0,0,0.07);
+      padding: 0.45rem 0.85rem 0.45rem 0.65rem;
+      border-radius: 100px;
+      transition: background 0.2s;
+    }
+    .back-home-btn:hover { background: rgba(0,0,0,0.13); text-decoration: none; }
+    .back-home-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      :root { --pad: 2rem; }
+      .section-heading { font-size: 3rem; }
+      .overview-body { grid-template-columns: 1fr; }
+      .outcomes-cols { grid-template-columns: 1fr; }
+      .case-hero-stats { flex-wrap: wrap; gap: 2rem; }
+      .case-hero { padding: 5rem 2rem; }
+      .content-group-label { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-btn" id="back-link">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+
+  <!-- Hero -->
+  <section class="case-hero">
+    <div class="case-hero-bg"></div>
+    <div class="case-hero-overlay"></div>
+    <div class="case-hero-content">
+      <div class="case-hero-label">Capitol Records</div>
+      <h1 class="case-hero-title">Feng — Weekend Rockstar</h1>
+      <div class="case-hero-stats">
+        <div>
+          <span class="case-hero-stat-value">2.5M</span>
+          <span class="case-hero-stat-label">Total Views</span>
+        </div>
+        <div>
+          <span class="case-hero-stat-value">646K</span>
+          <span class="case-hero-stat-label">Interactions</span>
+        </div>
+        <div>
+          <span class="case-hero-stat-value">29%</span>
+          <span class="case-hero-stat-label">Engagement Rate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Campaign -->
+  <hr class="section-rule">
+  <div class="section-heading">Campaign Overview</div>
+  <div class="overview-body">
+    <div class="overview-text">
+      <p>
+        Feng is at the forefront of the underground rap scene, particularly within the recent popularity of UK-based artists such as EsDeeKid and fakemink, among many others. However, Feng's persona is entirely his own. Posting exclusively with an iPhone 5 and often wearing tie-dye, he leans into a 2016-era nostalgia that resonates strongly with younger audiences. He pairs this aesthetic with glitchy melodies and his now-iconic lyrics. He first rose to prominence on TikTok, but as he began establishing a presence on Instagram, that is where LIBRARIES came in.
+      </p>
+      <p>
+        Capitol Records partnered with LIBRARIES following the signing of emerging artist Feng to execute a full-platform rollout designed to introduce him to a digitally engaged audience. The objective was to position Feng at the intersection of pop culture and nostalgia, two themes central to the LIBRARIES audience, while establishing his sound within the emerging music landscape.
+      </p>
+      <p>
+        The campaign integrated Feng's nostalgic rap style and glitch-driven production directly into LIBRARIES' existing content format. Rather than separating promotion from regular posts, his music was embedded within culturally relevant visuals and moments already familiar to the audience, allowing listeners to encounter his work in a context aligned with how they already consumed content.
+      </p>
+    </div>
+    <div class="meta-card">
+      <div class="meta-card-title">Campaign Details</div>
+      <div class="meta-row">
+        <span class="meta-label">Client</span>
+        <span class="meta-value">Capitol Records</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Artist</span>
+        <span class="meta-value">Feng</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Project</span>
+        <span class="meta-value">Weekend Rockstar</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Platform</span>
+        <span class="meta-value">Instagram (@libraries)</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Campaign Type</span>
+        <span class="meta-value">Organic Audio Campaign</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Genre</span>
+        <span class="meta-value">Underground Rap</span>
+      </div>
+    </div>
+    <div class="spotify-wrap">
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/278vNvolx8H3sQJ2hgOMnh?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Initial Moodboard -->
+  <hr class="section-rule">
+  <div class="section-heading">Initial Moodboard</div>
+  <div class="moodboard-body">
+    <img src="initial-moodboard-FENG.png" alt="Initial Moodboard" style="width: 100%; display: block;">
+  </div>
+
+  <!-- Curated Content -->
+  <hr class="section-rule">
+  <div class="section-heading">Curated Content</div>
+  <div class="curated-content-body">
+
+    <!-- Group 1 -->
+    <div class="content-group">
+      <p class="content-group-label"><strong>1. AUDIO EMBEDS:</strong> I independently curated 3 posts aligned with Feng's aesthetic, focusing on distinctive visuals and subcultures across Asia that complemented his underground sound. Pairing these elements created content that felt visually engaging while naturally introducing his music.</p>
+      <div class="content-posts-row posts-3">
+        <img src="feng-audio-1.jpg" alt="Feng Audio Embed 1">
+        <img src="feng-audio-2.jpg" alt="Feng Audio Embed 2">
+        <img src="feng-audio-3.jpg" alt="Feng Audio Embed 3">
+      </div>
+    </div>
+
+    <!-- Group 2 -->
+    <div class="content-group">
+      <p class="content-group-label"><strong>2. ORGANIC MUSIC FEATURES:</strong> After building familiarity with Feng's sound, I introduced his work visually by incorporating his latest music videos into the ongoing "songs i found for you this week" series, highlighting new releases within music culture.</p>
+      <div class="content-posts-row posts-2">
+        <img src="feng-post-1.jpg" alt="Feng Post 1">
+        <img src="feng-post-2.jpg" alt="Feng Post 2">
+      </div>
+    </div>
+
+    <!-- Group 3 -->
+    <div class="content-group">
+      <p class="content-group-label"><strong>3. POP CULTURE FEATURE:</strong> After building awareness for his music and videos, Feng was included alongside other rappers at the Gucci Fashion Show during Milan Fashion Week and featured in organic LIBRARIES content, bringing him to the front of people's feeds. This placement extended his visibility beyond music and positioned him in spaces that aligned with his niche.</p>
+      <div class="content-posts-row posts-2">
+        <img src="feng-post-3.jpg" alt="Feng Post 3">
+        <img src="feng-post-4.jpg" alt="Feng Post 4">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bonus: IRL Content -->
+  <hr class="section-rule">
+  <div class="section-heading">Bonus: IRL Content</div>
+  <div class="irl-body">
+    <div class="irl-grid">
+      <div class="irl-left">
+        <div class="irl-text">
+          <p>When working with Capitol, one of my collaborators, Jordan Chalmers (previously at Atlantic Records, now at Blackflag NYC), texted me asking if I knew any iPhone videographers in New York. From St. Louis, I spent the next hour reaching out to friends until I found someone who not only filmed on iPhone, but still had a working iPhone 5 to match Feng's aesthetic (thanks Aidan).</p>
+          <p>The next day, I coordinated a meetup for them in front of a newly installed Feng billboard, which featured a colorful graffiti tag layered over a Dior advertisement. My friend worked on-site capturing footage and imagery for the campaign as well as for Feng's Instagram feed. The photos turned out great, and it was incredibly rewarding to see the concept come to life in real time.</p>
+        </div>
+        <img src="irlcontent.png" alt="IRL Content" class="irl-photos">
+      </div>
+      <div class="irl-right">
+        <img src="fengpost.jpeg" alt="Feng Instagram Post" class="irl-post">
+      </div>
+    </div>
+  </div>
+
+  <!-- Campaign Outcomes -->
+  <hr class="section-rule">
+  <div class="section-heading">Campaign Outcomes</div>
+  <div class="outcomes-body">
+    <div class="outcomes-cols">
+      <div>
+        <div class="outcomes-col-label">Stats</div>
+        <p class="outcomes-col-text">The campaign expanded Feng's reach across the LIBRARIES platform and generated strong performance throughout the rollout. Across the campaign, content amassed <strong>2.5 million views and 646,000 interactions,</strong> resulting in a <strong>29% engagement rate,</strong> one of the highest achieved across any @libraries partnership. Audiences actively saved and shared posts, contributing to sustained visibility around his releases. Shortly after the campaign period, Feng <strong>surpassed 2 million monthly listeners</strong> on Spotify, reflecting continued growth during the rollout window.</p>
+      </div>
+      <div>
+        <div class="outcomes-col-label">What I Learned</div>
+        <p class="outcomes-col-text">Working with an emerging artist whose sound blends 2016-era nostalgic visuals with modern underground rap and production required a clear understanding of how to visually support a distinct musical identity. Curating each post meant identifying cultural references and subcultures that aligned with his style while still fitting within the LIBRARIES ecosystem. This project strengthened my ability to introduce a new artist at scale, align execution with a label's rollout objectives, and independently develop highly engaging content that supports longer-term discovery of the artist's work.</p>
+      </div>
+    </div>
+    <img src="feng-final.jpg" alt="Feng" class="outcomes-image">
+  </div>
+
+  <!-- Back Home -->
+  <div class="back-home-wrap">
+    <a href="index.html" class="back-home-btn" id="back-home-link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back Home
+    </a>
+  </div>
+
+  <script>
+    // Cursor
+    (function() {
+      var cursor = document.querySelector('.cursor');
+      document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+      });
+    })();
+  </script>
+
+  <script>
+    // Page fade + back navigation
+    (function() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() { document.body.style.opacity = '1'; });
+      });
+      ['back-link', 'back-home-link'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.body.style.opacity = '0';
+            setTimeout(function() { window.location.href = 'index.html'; }, 260);
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

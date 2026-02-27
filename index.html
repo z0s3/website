@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jose Villicana Brugada | Music Marketing & Social Media</title>
+  <meta name="description" content="Marketing student at WashU with 700K+ followers and 200M+ client views delivered, specializing in music marketing, social media growth, and artist development.">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://use.typekit.net/jzg6dwl.css">
+
+  <style>
+    /* ── RESET ── */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── ROOT TOKENS ── */
+    :root {
+      --pad: calc(4rem + 2px);
+      --text: rgba(0, 0, 0, 0.85);
+      --text-muted: rgba(0, 0, 0, 0.4);
+      --border: rgba(0, 0, 0, 0.12);
+      --blue: rgb(115, 171, 235);
+    }
+
+    /* ── BASE ── */
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      background: #fff;
+      letter-spacing: -0.02em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-text-size-adjust: none;
+      opacity: 1;
+      transition: opacity 0.22s ease;
+    }
+
+    body.page-fade { opacity: 0; }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── CURSOR ── */
+    * { cursor: none !important; }
+    .cursor {
+      position: fixed;
+      width: 8px; height: 8px;
+      background: var(--text);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+      transition: width 0.15s ease, height 0.15s ease;
+      will-change: left, top;
+    }
+    .cursor.hovering { width: 13px; height: 13px; }
+
+    /* ─────────────────────────────
+       HEADER / HERO
+    ───────────────────────────── */
+    .site-header {
+      padding: 3rem var(--pad) 3rem;
+    }
+
+    /* Name — large, centered */
+    .header-name {
+      text-align: center;
+      font-family: 'coolvetica', sans-serif;
+      font-size: 2.89rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    /* Contact — small, muted, centered, two lines */
+    .header-contact {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .header-contact a { color: var(--text-muted); }
+    .header-contact a:hover { text-decoration: underline; }
+
+    /* Two-column hero: photo | bio — equal columns so bio stays narrow, photo grows naturally */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.6fr 1fr;
+      gap: 16rem;
+      align-items: start;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Caption — 1.2rem, rgba(0,0,0,0.4), margin-top 1em */
+    .hero-photo-caption {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      line-height: 1.3;
+    }
+
+    /* Bio */
+    .hero-bio {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 0;
+      max-width: 80%;
+    }
+
+    /* Stats — original card style from old index */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      padding: 2rem 0 0;
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* ─────────────────────────────
+       NOTABLE PARTNERS
+    ───────────────────────────── */
+    .notable-partners {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    /* Sublabel — small, uppercase, centered, muted */
+    .sublabel {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Infinite marquee */
+    .partners-logos {
+      display: flex;
+      align-items: center;
+      gap: 12rem;
+      width: max-content;
+      animation: partners-marquee 40s linear infinite;
+    }
+
+    .partners-logos img {
+      height: 55px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .partners-logos img[src="logo-kalshi.png"] { height: 22px; }
+
+    @keyframes partners-marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─────────────────────────────
+       SECTION DIVIDERS & HEADINGS
+       Matches <hr> + h1 at
+       large size, weight 700, ls 0
+    ───────────────────────────── */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* Section heading: 4.5rem, 400 weight — editorial, not bold */
+    .section-heading {
+      padding: 2rem var(--pad) 1.5rem;
+      font-family: 'coolvetica', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    /* ─────────────────────────────
+       SECTION 1 — MEDIA BRAND
+    ───────────────────────────── */
+    /* Outer two-column grid — image right column starts at same row as heading */
+    .sec1-outer {
+      display: grid;
+      grid-template-columns: 1fr 0.6fr;
+      gap: 4rem;
+      padding: 0 var(--pad);
+      align-items: start;
+    }
+
+    /* Heading inside the grid loses its own horizontal padding */
+    .sec1-outer .section-heading {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .sec1-body { padding: 0; }
+
+    /* Profile image column — padding-top matches heading's top padding */
+    .sec1-right { padding-top: 2rem; }
+
+    /* Subtitle — 1.2rem bold */
+    .sec1-subtitle {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    /* Body text */
+    .sec1-text {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: var(--text);
+      max-width: 75%;
+    }
+
+    /* Instagram profile card */
+    .ig-profile-card {
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .ig-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-bottom: 1px solid #efefef;
+    }
+
+    .ig-top-left { display: flex; align-items: center; gap: 8px; }
+
+    .ig-av {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #eee;
+      flex-shrink: 0;
+    }
+
+    .ig-av img { width: 100%; height: 100%; object-fit: cover; }
+    .ig-uname { font-size: 0.8rem; font-weight: 700; }
+    .ig-icons { color: #aaa; font-size: 0.9rem; letter-spacing: 2px; }
+
+    .ig-stats { display: flex; border-bottom: 1px solid #efefef; }
+    .ig-stat { flex: 1; text-align: center; padding: 12px 4px; }
+    .ig-stat-v { display: block; font-size: 0.85rem; font-weight: 700; }
+    .ig-stat-l { display: block; font-size: 0.65rem; color: var(--text-muted); margin-top: 2px; }
+
+    .ig-community { padding: 10px 12px 12px; }
+    .ig-community-title { font-size: 0.75rem; font-weight: 700; }
+    .ig-community-by { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+    .ig-community-by span { color: var(--text); font-weight: 600; }
+
+    /* Featured Posts */
+    .featured-posts-wrap {
+      padding: 2rem var(--pad) 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .post-embed { display: flex; justify-content: center; }
+    .post-embed blockquote {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 100% !important;
+    }
+
+    /* Libraries Radio */
+    .radio-wrap {
+      padding: 1.5rem var(--pad) 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .radio-inner {
+      width: 100%;
+      max-width: 1092px;
+    }
+
+    .radio-caption {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .radio-wrap img { width: 100%; display: block; }
+
+    /* Hover effect — overlay + zoom for linked images */
+    .sec1-right a,
+    .radio-inner a {
+      display: block;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .sec1-right a img,
+    .radio-inner a img {
+      transition: transform 0.4s ease;
+    }
+
+    .sec1-right a:hover img,
+    .radio-inner a:hover img { transform: scale(1.04); }
+
+    /* ─────────────────────────────
+       SECTION 2 — CAMPAIGNS
+    ───────────────────────────── */
+    .sec2-body { padding: 0 var(--pad); }
+
+    .sec2-intro {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: var(--text);
+      max-width: 780px;
+      margin-bottom: 2rem;
+    }
+
+    .view-work-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Stacked horizontal campaign cards */
+    .campaign-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.625rem;
+      margin-bottom: 3.5rem;
+      max-width: 81%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .campaign-card {
+      display: grid;
+      grid-template-columns: 1fr 40%;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+      height: 390px;
+      overflow: hidden;
+    }
+
+    .campaign-card:hover { background: rgba(0,0,0,0.015); text-decoration: none; }
+
+    .campaign-info {
+      padding: 3.25rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .campaign-label-tag {
+      font-size: 0.85rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      display: inline-block;
+      margin-bottom: 0.975rem;
+      align-self: flex-start;
+    }
+
+    .campaign-title {
+      font-size: 2.1rem;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.975rem;
+      color: var(--text);
+    }
+
+    .campaign-desc {
+      font-size: 1.3rem;
+      line-height: 1.4;
+      color: var(--text);
+      opacity: 0.7;
+      margin-bottom: 2.275rem;
+      flex: 1;
+    }
+
+    .campaign-metrics { display: flex; gap: 3.9rem; }
+
+    .campaign-metric-value {
+      display: block;
+      font-size: 1.95rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .campaign-metric-label {
+      display: block;
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      margin-top: 0.26rem;
+    }
+
+    .campaign-img { overflow: hidden; }
+
+    .campaign-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .campaign-card:hover .campaign-img img { transform: scale(1.03); }
+
+    /* ─────────────────────────────
+       SECTION 3 — ADDITIONAL PROJECTS
+    ───────────────────────────── */
+    .sec3-body { padding: 0 var(--pad); }
+
+    .sec3-intro {
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .proj-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      display: block;
+      text-decoration: none;
+      transition: transform 0.25s ease;
+    }
+
+    .proj-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .proj-card:hover img { transform: scale(1.04); }
+
+    .proj-card-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+      padding: 1.75rem 1.5rem;
+      color: #fff;
+    }
+
+    .proj-card-tag {
+      font-size: 0.78rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 0.4rem;
+    }
+
+    .proj-card-title {
+      font-family: 'coolvetica', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      margin-bottom: 0.65rem;
+    }
+
+    .proj-card-stats {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .proj-stat-value {
+      display: block;
+      font-size: 1.95rem;
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .proj-stat-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ─────────────────────────────
+       SECTION 4 — RESUME
+    ───────────────────────────── */
+    .sec4-body { padding: 0 var(--pad) 4rem; }
+
+    .resume-doc {
+      max-width: 680px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      padding: 3rem 3.5rem;
+    }
+
+    .resume-name {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+
+    .resume-contact {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .resume-contact a { color: var(--text-muted); }
+    .resume-contact a:hover { text-decoration: underline; }
+
+    .r-sec {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 3px;
+      margin: 1.25rem 0 0.75rem;
+      color: var(--text);
+    }
+
+    .r-entry { margin-bottom: 0.85rem; }
+
+    .r-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .r-title { font-size: 0.8rem; font-weight: 700; color: var(--text); }
+    .r-date { font-size: 0.72rem; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; }
+    .r-org { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin-bottom: 0.25rem; }
+
+    .r-bullets {
+      font-size: 0.72rem;
+      color: var(--text);
+      opacity: 0.75;
+      padding-left: 1rem;
+      line-height: 1.55;
+    }
+
+    .r-bullets li { margin-bottom: 2px; }
+
+    /* ─────────────────────────────
+       FOOTER
+    ───────────────────────────── */
+    .site-footer {
+      text-align: center;
+      padding: 1.5rem var(--pad);
+      border-top: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .site-footer a { color: var(--text-muted); }
+    .site-footer a:hover { text-decoration: underline; }
+
+    /* ─────────────────────────────
+       FADE IN
+    ───────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─────────────────────────────
+       RESPONSIVE
+    ───────────────────────────── */
+    @media (max-width: 960px) {
+      :root { --pad: 2rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-photo img { width: 100%; height: 220px; }
+      .sec1-grid { grid-template-columns: 1fr; }
+      .project-grid { grid-template-columns: 1fr 1fr; }
+      .project-card { height: 360px; }
+      .proj-grid { grid-template-columns: 1fr 1fr; }
+      .section-heading { font-size: 3rem; }
+      .radio-title { font-size: 2.5rem; }
+      .libraries-radio { grid-template-columns: 1fr; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .header-name { font-size: 2.4rem; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --pad: 1.25rem; }
+      .project-grid, .proj-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem 0 0; }
+      .section-heading { font-size: 2.2rem; }
+      .partners-logos { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    }
+    /* ─────────────────────────────
+       RESUME LIGHTBOX
+    ───────────────────────────── */
+    .resume-img-wrap {
+      position: relative;
+      display: block;
+      max-width: 780px;
+      margin: 0 auto;
+      cursor: zoom-in !important;
+    }
+    .resume-img-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .resume-img-wrap::after {
+      content: 'View Fullscreen';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      pointer-events: none;
+      opacity: 0;
+      background: rgba(0,0,0,0);
+      transition: opacity 0.2s ease, background 0.2s ease;
+    }
+    .resume-img-wrap:hover::after {
+      opacity: 1;
+      background: rgba(0,0,0,0.38);
+    }
+
+    .resume-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.65rem 1.2rem 0.65rem 0.95rem;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      background: rgba(0,0,0,0.07);
+      border-radius: 100px;
+      border: none;
+      cursor: pointer !important;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .resume-download-btn:hover { background: rgba(0,0,0,0.13); text-decoration: none; }
+    .resume-download-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    /* Lightbox overlay */
+    #resume-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 999999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    #resume-lightbox.open {
+      display: flex;
+    }
+    #resume-lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      display: block;
+      box-shadow: 0 8px 60px rgba(0,0,0,0.6);
+    }
+    #resume-lightbox-close {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(0,0,0,0.28);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 0.65rem 1.2rem 0.65rem 0.95rem;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer !important;
+      z-index: 1000000;
+      transition: background 0.2s ease;
+    }
+    #resume-lightbox-close:hover { background: rgba(0,0,0,0.45); }
+    #resume-lightbox-close svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <!-- ══ HEADER ══ -->
+  <header class="site-header">
+    <div class="header-name">Jose Villicana Brugada</div>
+    <div class="header-contact">
+      <a href="mailto:josevillicanabrugada@gmail.com">josevillicanabrugada@gmail.com</a><br>
+      <a href="tel:6614004551">(661) 400-4551</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://linkedin.com/in/zose/" target="_blank" rel="noopener">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://instagram.com/zose" target="_blank" rel="noopener">Instagram</a>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <img src="about_me_photo.jpg" alt="Jose Villicana Brugada">
+        <div class="hero-photo-caption">
+          Washington University in St. Louis<br>
+          BSBA Marketing / Expected May 2028<br>
+          Minor in Communication Design
+        </div>
+      </div>
+
+      <div>
+        <p class="hero-bio">
+          Hi, I'm Jose Villicana Brugada, a marketing student at Washington University in St. Louis focused on music, media, and digital strategy. Over my time on social media, I've grown more than <strong>2 million followers</strong> across a variety of niches. I'm currently building LIBRARIES, an independent <strong>music and pop culture platform</strong> reaching over 670,000 followers, where I've developed partnerships with major labels and emerging artists. My work spans social-first campaign execution and rollout support for releases across Atlantic, Capitol, Interscope, and other teams. I'm particularly interested in how digital platforms shape discovery and how marketing strategies can turn online attention into sustained audience growth for artists.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-value">700K+</span>
+            <span class="stat-label">Current Followers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">200M+</span>
+            <span class="stat-label">Client Views Delivered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">Campaigns Supported</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ NOTABLE PARTNERS ══ -->
+  <div class="notable-partners fade-up">
+    <div class="sublabel">Notable Partners</div>
+    <div class="partners-logos">
+      <img src="logo-meta.png" alt="Meta">
+      <img src="logo-warner.png" alt="Warner Music Group">
+      <img src="logo-universal.png" alt="Universal Music Group">
+      <img src="logo-interscope.png" alt="Interscope Records">
+      <img src="logo-amazon.png" alt="Amazon">
+      <img src="logo-kalshi.png" alt="Kalshi">
+      <img src="logo-atlantic.png" alt="Atlantic Records">
+      <img src="logo-capitol.png" alt="Capitol Music Group">
+      <img src="logo-create.png" alt="Create Music Group">
+      <!-- duplicate set for seamless loop -->
+      <img src="logo-meta.png" alt="Meta">
+      <img src="logo-warner.png" alt="Warner Music Group">
+      <img src="logo-universal.png" alt="Universal Music Group">
+      <img src="logo-interscope.png" alt="Interscope Records">
+      <img src="logo-amazon.png" alt="Amazon">
+      <img src="logo-kalshi.png" alt="Kalshi">
+      <img src="logo-atlantic.png" alt="Atlantic Records">
+      <img src="logo-capitol.png" alt="Capitol Music Group">
+      <img src="logo-create.png" alt="Create Music Group">
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       1. MEDIA BRAND
+  ══════════════════════════════ -->
+  <hr class="section-rule">
+  <div class="sec1-outer">
+
+    <div class="sec1-left">
+      <div class="section-heading fade-up">1.&nbsp; MEDIA BRAND</div>
+      <div class="sec1-body">
+        <div class="sec1-subtitle">Founder &amp; Content Director @ LIBRARIES</div>
+        <p class="sec1-text fade-up">
+          LIBRARIES is a media brand at the intersection of music, entertainment, and pop culture, now reaching over 670,000 followers. Over the past three years, I've independently curated and published daily image- and text-based content covering music, online culture, and internet nostalgia in formats built for social platforms. In parallel, I've partnered directly with major labels to support artist and release visibility. My role centers on optimizing content for engagement, analyzing audience response, and distributing posts at scale, regularly placing content in front of more than 100 million viewers each month.
+        </p>
+      </div>
+    </div>
+
+    <div class="sec1-right">
+      <a href="https://instagram.com/libraries" target="_blank" rel="noopener">
+        <img src="libraries_profile.jpeg" alt="Libraries Instagram Profile" style="width:100%; display:block;">
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FEATURED POSTS -->
+  <div class="featured-posts-wrap fade-up">
+    <div class="sublabel">Featured Posts</div>
+    <div class="posts-grid">
+      <div class="post-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRbIL3dDm_R/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DRbIL3dDm_R/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DRbIL3dDm_R/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by libraries (@libraries)</a></p></div></blockquote>
+      </div>
+      <div class="post-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRoEBPpDgeK/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DRoEBPpDgeK/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DRoEBPpDgeK/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by libraries (@libraries)</a></p></div></blockquote>
+      </div>
+      <div class="post-embed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRqu_u7DlRl/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DRqu_u7DlRl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DRqu_u7DlRl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by libraries (@libraries)</a></p></div></blockquote>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:10px; color:#ccc; margin-top:10px; padding-bottom:10px;">Click to view on Instagram</p>
+  </div>
+
+  <!-- LIBRARIES RADIO BANNER -->
+  <div class="radio-wrap fade-up">
+    <div class="radio-inner">
+      <p class="radio-caption">At the core of LIBRARIES is music, which extends beyond content into a community playlist I curate that has grown to over 3,000 saves from listeners who engage with it as an ongoing shared experience. I frequently update this, along with designing new covers for it. Give the playlist a listen!</p>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4FbVYwKwk1KFltdg4rjEZy?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       2. CAMPAIGNS
+  ══════════════════════════════ -->
+  <hr class="section-rule">
+  <div class="section-heading fade-up">2.&nbsp; CAMPAIGNS</div>
+
+  <div class="sec2-body">
+    <p class="sec2-intro">
+      Campaign work has shaped how I understand the connection between music and the audiences who discover it online. What began as posting daily and building my own social platforms evolved into collaborating with artists and label teams to support releases in real time and building awareness and  fandoms around artists of all sizes. I focus on organic placements and distribution, ensuring all content reflects the artist's identity. Some of my favorite projects involve the "underground" and next generation of modern music online.
+    </p>
+    <div class="view-work-label">Featured Campaigns:</div>
+
+    <div class="campaign-stack">
+
+      <a href="case-feng.html" class="campaign-card fade-up" data-outbound>
+        <div class="campaign-info">
+          <span class="campaign-label-tag">Capitol Records</span>
+          <h3 class="campaign-title">Feng - Weekend Rockstar</h3>
+          <p class="campaign-desc">Partnered with Capitol Records for an organic Instagram audio campaign for emerging underground rapper Feng. Unique, underground content paired with his music to promote the Weekend Rockstar project.</p>
+          <div class="campaign-metrics">
+            <div>
+              <span class="campaign-metric-value">2.5M</span>
+              <span class="campaign-metric-label">Total Views</span>
+            </div>
+            <div>
+              <span class="campaign-metric-value">646K</span>
+              <span class="campaign-metric-label">Interactions</span>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-img">
+          <img src="Feng.jpeg" alt="Feng - Weekend Rockstar">
+        </div>
+      </a>
+
+      <a href="case-wisp.html" class="campaign-card fade-up" data-outbound>
+        <div class="campaign-info">
+          <span class="campaign-label-tag">Interscope / MusicSoup</span>
+          <h3 class="campaign-title">Wisp - If Not Winter</h3>
+          <p class="campaign-desc">Partnered with MusicSoup/Interscope Records for an organic Instagram campaign for the rollout of emerging artist Wisp. Developed content strategy and distribution, creating 9 organic features.</p>
+          <div class="campaign-metrics">
+            <div>
+              <span class="campaign-metric-value">4.9M</span>
+              <span class="campaign-metric-label">Total Views</span>
+            </div>
+            <div>
+              <span class="campaign-metric-value">218K</span>
+              <span class="campaign-metric-label">Interactions</span>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-img">
+          <img src="wisp-campaign.jpeg" alt="Wisp Campaign">
+        </div>
+      </a>
+
+      <a href="case-tayk.html" class="campaign-card fade-up" data-outbound>
+        <div class="campaign-info">
+          <span class="campaign-label-tag">Broke Records / Create Music Group</span>
+          <h3 class="campaign-title">Tay-K - Half Off</h3>
+          <p class="campaign-desc">Partnered with Broke Records/Create Music Group to promote established artist Tay-K through several of his new releases. Developed organic content and guided 5 organic features that led to millions of views.</p>
+          <div class="campaign-metrics">
+            <div>
+              <span class="campaign-metric-value">13.3M</span>
+              <span class="campaign-metric-label">Total Views</span>
+            </div>
+            <div>
+              <span class="campaign-metric-value">280K</span>
+              <span class="campaign-metric-label">Interactions</span>
+            </div>
+          </div>
+        </div>
+        <div class="campaign-img">
+          <img src="tay_k_cover.jpg" alt="Tay-K">
+        </div>
+      </a>
+    </div>
+  </div>
+
+ 
+
+
+  <!-- ══════════════════════════════
+       3. ADDITIONAL PROJECTS
+  ══════════════════════════════ -->
+  <hr class="section-rule">
+  <div class="section-heading fade-up">3.&nbsp; ADDITIONAL PROJECTS</div>
+
+  <div class="sec3-body">
+    <p class="sec3-intro">
+      I'm always looking for new ways to stay involved creatively. Outside of my work in media marketing, I take on projects that keep me active in creative environments through a mix of independent initiatives and student organizations. Experiences such as serving as a radio programming trainee at KWUR 90.3 FM, growing a fashion-focused platform to over 55K followers, and working as Creative Director at Armour Magazine allow me to stay engaged with culture and continue developing the perspective that informs my work in music and media.
+    </p>
+
+    <div class="proj-grid fade-up">
+      <a href="https://mixlr.com/kwur-903" class="proj-card" target="_blank" rel="noopener">
+        <img src="kwur-preview.jpg" alt="KWUR 90.3 FM">
+        <div class="proj-card-overlay">
+          <div class="proj-card-tag">Radio Programming Trainee</div>
+          <div class="proj-card-title">KWUR 90.3 FM</div>
+          <div class="proj-card-stats">
+            <div>
+              <span class="proj-stat-value">Live Broadcasting</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/jvrj" class="proj-card" target="_blank" rel="noopener">
+        <img src="jvrj-preview.jpg" alt="@JVRJ">
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.50);pointer-events:none;"></div>
+        <div class="proj-card-overlay">
+          <div class="proj-card-tag">Personal Brand — Fashion</div>
+          <div class="proj-card-title">@JVRJ</div>
+          <div class="proj-card-stats">
+            <div>
+              <span class="proj-stat-value">55K+</span>
+              <span class="proj-stat-label">Followers</span>
+            </div>
+            <div>
+              <span class="proj-stat-value">$20K+</span>
+              <span class="proj-stat-label">Revenue Generated</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://issuu.com/armourmag/docs/superfluous_armour_magazine_issue_33/84" class="proj-card" target="_blank" rel="noopener">
+        <img src="armour-preview.jpg" alt="Armour Magazine">
+        <div class="proj-card-overlay">
+          <div class="proj-card-tag">Creative Director</div>
+          <div class="proj-card-title">Armour Magazine</div>
+          <div class="proj-card-stats">
+            <div>
+              <span class="proj-stat-value">Issue 33</span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════
+       4. RESUME
+  ══════════════════════════════ -->
+  <hr class="section-rule">
+  <div class="section-heading fade-up">4.&nbsp; RESUME</div>
+
+  <div class="sec4-body fade-up">
+    <a class="resume-img-wrap" id="resume-open" href="#">
+      <img src="resume.png" alt="Jose Villicana Brugada Resume">
+    </a>
+    <div style="text-align:center; margin-top:1.25rem;">
+    <a class="resume-download-btn" href="VillicanaBrugada_Jose_Resume.pdf" download="VillicanaBrugada_Jose_Resume.pdf">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download
+    </a>
+    </div>
+  </div>
+
+  <!-- Resume Lightbox -->
+  <div id="resume-lightbox">
+    <button id="resume-lightbox-close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      Back
+    </button>
+    <img src="resume.png" alt="Jose Villicana Brugada Resume Fullscreen">
+  </div>
+
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <a href="#">josevillicana.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="mailto:josevillicanabrugada@gmail.com">email</a> / <a href="https://linkedin.com/in/zose/" target="_blank" rel="noopener">linkedin</a> / <a href="https://instagram.com/zose" target="_blank" rel="noopener">instagram</a>
+  </footer>
+
+
+  <!-- Instagram embed script -->
+  <script async src="//www.instagram.com/embed.js"></script>
+
+  <script>
+    // ── Resume lightbox ──
+    (function() {
+      var open  = document.getElementById('resume-open');
+      var lb    = document.getElementById('resume-lightbox');
+      var close = document.getElementById('resume-lightbox-close');
+
+      open.addEventListener('click', function(e) {
+        e.preventDefault();
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+      function closeLb() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      close.addEventListener('click', closeLb);
+      lb.addEventListener('click', function(e) {
+        if (e.target === lb) closeLb();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLb();
+      });
+    })();
+
+    // ── Custom cursor ──
+    (function() {
+      var cursor = document.querySelector('.cursor');
+      document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button').forEach(function(el) {
+        el.addEventListener('mouseenter', function() { cursor.classList.add('hovering'); });
+        el.addEventListener('mouseleave', function() { cursor.classList.remove('hovering'); });
+      });
+    })();
+  </script>
+
+  <script>
+    // ── Outbound page transitions ──
+    document.querySelectorAll('a[data-outbound]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        sessionStorage.setItem('homeScrollY', window.scrollY);
+        var href = this.href;
+        document.body.classList.add('page-fade');
+        setTimeout(function() { window.location.href = href; }, 230);
+      });
+    });
+
+    // Restore scroll on return
+    (function() {
+      var saved = sessionStorage.getItem('homeScrollY');
+      if (saved !== null) {
+        sessionStorage.removeItem('homeScrollY');
+        requestAnimationFrame(function() {
+          window.scrollTo({ top: parseInt(saved, 10), behavior: 'instant' });
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    // ── Scroll-triggered fade-in ──
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var delay = entry.target.dataset.delay || 0;
+            entry.target.style.transitionDelay = delay + 's';
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll('.fade-up').forEach(function(el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible');
+        } else {
+          observer.observe(el);
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
