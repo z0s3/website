@@ -360,10 +360,25 @@
       :root { --pad: 2rem; }
       .section-heading { font-size: 3rem; }
       .overview-body { grid-template-columns: 1fr; }
+      .meta-card { display: none; }
       .outcomes-cols { grid-template-columns: 1fr; }
+      .outcomes-image { width: 100%; border-radius: 0; }
       .case-hero-stats { flex-wrap: wrap; gap: 2rem; }
       .case-hero { padding: 5rem 2rem; }
+      .moodboard-body { padding-left: 0; padding-right: 0; }
+      .curated-content-body { padding-left: var(--pad); padding-right: var(--pad); padding-bottom: 2rem; }
       .content-group-label { max-width: 100%; }
+      .content-posts-row { flex-direction: column; max-width: 100%; }
+      .content-posts-row.posts-2,
+      .content-posts-row.posts-3 { max-width: 100%; margin: 0; }
+      .content-posts-row img { width: 100%; flex: none; border-radius: 0; }
+      .content-posts-row.posts-1 img { width: 100%; }
+      .irl-body { padding-left: 0; padding-right: 0; }
+      .irl-text { padding-left: var(--pad); padding-right: var(--pad); }
+      .irl-grid { grid-template-columns: 1fr; }
+      .irl-photos { width: 100%; }
+      .irl-right { padding-left: var(--pad); padding-right: var(--pad); }
+      .irl-post { width: 100%; border-radius: 0; }
     }
   </style>
 </head>
