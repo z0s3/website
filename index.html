@@ -1217,6 +1217,55 @@
   </script>
 
   <script>
+    // ── Scroll nudge hint ──
+    (function() {
+      if (window.innerWidth <= 960) return;
+
+      var animating = false;
+      var cancelled = false;
+
+      function easeInOut(t) {
+        return -(Math.cos(Math.PI * t) - 1) / 2;
+      }
+
+      function smoothTo(target, duration, callback) {
+        if (cancelled) return;
+        var start = window.scrollY;
+        var startTime = null;
+        function step(ts) {
+          if (cancelled) return;
+          if (!startTime) startTime = ts;
+          var p = Math.min((ts - startTime) / duration, 1);
+          window.scrollTo(0, start + (target - start) * easeInOut(p));
+          if (p < 1) {
+            requestAnimationFrame(step);
+          } else if (callback) {
+            callback();
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      var nudgeTimer = setTimeout(function() {
+        if (window.scrollY > 0) return;
+        animating = true;
+        smoothTo(90, 700, function() {
+          smoothTo(0, 700, function() {
+            animating = false;
+          });
+        });
+      }, 5000);
+
+      window.addEventListener('scroll', function onScroll() {
+        if (animating) return;
+        clearTimeout(nudgeTimer);
+        cancelled = true;
+        window.removeEventListener('scroll', onScroll);
+      });
+    })();
+  </script>
+
+  <script>
     // ── Scroll-triggered fade-in ──
     (function() {
       var observer = new IntersectionObserver(function(entries) {
