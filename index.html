@@ -13,6 +13,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://josevillicana.com/about_me_photo.jpg">
 
+  <link rel="preload" as="image" href="about_me_photo.jpg">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://use.typekit.net/jzg6dwl.css">
 
@@ -1192,12 +1193,21 @@
         section.style.transform = 'scale(' + finalScale + ')';
       }
 
-      // Run after all resources (images) are fully loaded, not before
-      window.addEventListener('load', function() {
+      // Reveal as soon as the hero image is ready — don't wait for the full page
+      function revealHero() {
         scaleHero();
         if (window.scrollY > 50) wrap.style.transition = 'none';
         wrap.style.opacity = '1';
-      });
+      }
+      var heroImg = section.querySelector('img');
+      if (heroImg && heroImg.complete) {
+        revealHero(); // already cached
+      } else if (heroImg) {
+        heroImg.addEventListener('load', revealHero);
+        heroImg.addEventListener('error', revealHero); // broken image — still reveal
+      } else {
+        window.addEventListener('load', revealHero);
+      }
 
       // Only re-scale when width changes — height-only changes (iPad browser bar
       // hiding/showing on scroll) should not trigger a rescale
