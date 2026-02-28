@@ -1279,19 +1279,21 @@
         requestAnimationFrame(step);
       }
 
-      var nudgeTimer = setTimeout(function() {
-        if (window.scrollY > 0) return;
+      function doBounce() {
+        if (window.scrollY > 0 || cancelled) return;
         animating = true;
         smoothTo(90, 700, function() {
           smoothTo(0, 700, function() {
             animating = false;
+            setTimeout(doBounce, 20000);
           });
         });
-      }, 5000);
+      }
+
+      setTimeout(doBounce, 5000);
 
       window.addEventListener('scroll', function onScroll() {
         if (animating) return;
-        clearTimeout(nudgeTimer);
         cancelled = true;
         window.removeEventListener('scroll', onScroll);
       });
