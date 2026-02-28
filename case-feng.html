@@ -48,9 +48,10 @@
       pointer-events: none;
       z-index: 99999;
       transform: translate(-50%, -50%);
-      transition: width 0.15s ease, height 0.15s ease;
+      transition: width 0.15s ease, height 0.15s ease, background 0.15s ease;
       will-change: left, top;
     }
+    .cursor.hovering { width: 13px; height: 13px; background: var(--blue); }
 
     /* ── BACK BUTTON ── */
     .back-btn {
@@ -556,6 +557,10 @@
       document.addEventListener('mousemove', function(e) {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
+      });
+      document.querySelectorAll('a, button').forEach(function(el) {
+        el.addEventListener('mouseenter', function() { cursor.classList.add('hovering'); });
+        el.addEventListener('mouseleave', function() { cursor.classList.remove('hovering'); });
       });
     })();
   </script>
