@@ -810,7 +810,7 @@
 
       <div>
         <p class="hero-bio">
-          Hi, I'm Jose Villicana Brugada, a marketing student at Washington University in St. Louis focused on music, media, and digital strategy. Over my time on social media, I've grown more than <strong>2 million followers</strong> across a variety of niches. I'm currently building LIBRARIES, an independent <strong>music and pop culture platform</strong>, where I've developed partnerships with major labels and emerging artists. My work spans social-first campaign execution and rollout support for releases across Atlantic, Capitol, Interscope, and other teams. I'm particularly interested in how digital platforms shape discovery and how marketing strategies can turn online attention into sustained audience growth for artists.
+          Hi, I'm Jose Villicana Brugada, a marketing student at Washington University in St. Louis focused on music, media, and digital strategy. Over my time on social media, I've grown more than <strong>2 million followers</strong> across a variety of niches. I'm currently building LIBRARIES, an independent <strong>music and pop culture platform</strong>, where I've developed partnerships with major labels and emerging artists. My work spans social-first campaign execution and rollout support for releases across Atlantic, Capitol, Interscope, and other teams. I'm particularly interested in how digital platforms shape discovery for artists.
         </p>
         <div class="hero-stats">
           <div class="stat">
@@ -922,7 +922,7 @@
         <div class="campaign-info">
           <span class="campaign-label-tag">Capitol Records</span>
           <h3 class="campaign-title">Feng - Weekend Rockstar</h3>
-          <p class="campaign-desc">Partnered with Capitol Records for an organic Instagram audio campaign for emerging underground rapper Feng. Unique, underground content paired with his music to promote the Weekend Rockstar project.</p>
+          <p class="campaign-desc">Partnered with Capitol Records for an organic Instagram audio campaign for emerging underground rapper Feng. Unique subculture content paired with his music to promote the Weekend Rockstar project through 7 organic features.</p>
           <div class="campaign-metrics">
             <div>
               <span class="campaign-metric-value">2.5M</span>
@@ -1132,6 +1132,11 @@
         document.body.classList.add('page-fade');
         setTimeout(function() { window.location.href = href; }, 230);
       });
+    });
+
+    window.addEventListener('pageshow', function(e) {
+      document.body.classList.remove('page-fade');
+      document.body.style.opacity = '1';
     });
 
     // Restore scroll on return

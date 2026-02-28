@@ -581,6 +581,10 @@
           });
         }
       });
+
+      window.addEventListener('pageshow', function() {
+        document.body.style.opacity = '1';
+      });
     })();
   </script>
 </body>
