@@ -1191,7 +1191,15 @@
 
       // Run after all resources (images) are fully loaded, not before
       window.addEventListener('load', scaleHero);
-      window.addEventListener('resize', scaleHero);
+
+      // Only re-scale when width changes — height-only changes (iPad browser bar
+      // hiding/showing on scroll) should not trigger a rescale
+      var lastWidth = 0;
+      window.addEventListener('resize', function() {
+        if (window.innerWidth === lastWidth) return;
+        lastWidth = window.innerWidth;
+        scaleHero();
+      });
     })();
   </script>
 
