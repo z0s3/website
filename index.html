@@ -41,6 +41,9 @@
       -webkit-text-size-adjust: none;
       opacity: 1;
       transition: opacity 0.22s ease;
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     body.page-fade { opacity: 0; }
@@ -49,7 +52,7 @@
     a:hover { text-decoration: underline; }
 
     /* ── CURSOR ── */
-    * { cursor: none !important; }
+    * { cursor: none !important; user-select: none; }
     .cursor {
       position: fixed;
       width: 8px; height: 8px;
@@ -62,6 +65,7 @@
       will-change: left, top;
     }
     .cursor.hovering { width: 13px; height: 13px; background: var(--blue); }
+    .cursor.in-lightbox { background: var(--blue); }
 
     /* ─────────────────────────────
        HEADER / HERO
@@ -794,7 +798,7 @@
     <div class="header-name">Jose Villicana Brugada</div>
     <div class="header-contact">
       <a href="mailto:josevillicanabrugada@gmail.com">josevillicanabrugada@gmail.com</a><br>
-      <a href="tel:6614004551">(661) 400-4551</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://linkedin.com/in/zose/" target="_blank" rel="noopener">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://instagram.com/zose" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linkedin.com/in/zose/" target="_blank" rel="noopener">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://instagram.com/zose" target="_blank" rel="noopener">Instagram</a>
     </div>
 
     <div class="hero-grid">
@@ -1087,18 +1091,21 @@
   <script>
     // ── Resume lightbox ──
     (function() {
-      var open  = document.getElementById('resume-open');
-      var lb    = document.getElementById('resume-lightbox');
-      var close = document.getElementById('resume-lightbox-close');
+      var open   = document.getElementById('resume-open');
+      var lb     = document.getElementById('resume-lightbox');
+      var close  = document.getElementById('resume-lightbox-close');
+      var cursor = document.querySelector('.cursor');
 
       open.addEventListener('click', function(e) {
         e.preventDefault();
         lb.classList.add('open');
         document.body.style.overflow = 'hidden';
+        cursor.classList.add('in-lightbox');
       });
       function closeLb() {
         lb.classList.remove('open');
         document.body.style.overflow = '';
+        cursor.classList.remove('in-lightbox');
       }
       close.addEventListener('click', closeLb);
       lb.addEventListener('click', function(e) {
