@@ -1176,16 +1176,21 @@
         // Two passes to let the layout settle after the width change
         for (var i = 0; i < 2; i++) {
           var naturalH = section.offsetHeight;
-          var scale    = vh / naturalH;
-          // Set the pre-scale width so that (width × scale) === vw exactly
+          if (!naturalH) return; // images not loaded yet — bail out safely
+          var scale = vh / naturalH;
+          if (!isFinite(scale) || scale <= 0) return;
           section.style.width = (vw / scale) + 'px';
         }
 
-        var finalScale = vh / section.offsetHeight;
+        var finalH = section.offsetHeight;
+        if (!finalH) return;
+        var finalScale = vh / finalH;
+        if (!isFinite(finalScale) || finalScale <= 0) return;
         section.style.transform = 'scale(' + finalScale + ')';
       }
 
-      scaleHero();
+      // Run after all resources (images) are fully loaded, not before
+      window.addEventListener('load', scaleHero);
       window.addEventListener('resize', scaleHero);
     })();
   </script>
