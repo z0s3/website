@@ -74,12 +74,13 @@
       height: 100vh;
       height: 100svh;
       overflow: hidden;
+      visibility: hidden;
     }
     #hero-section {
       transform-origin: top left;
     }
     @media (max-width: 960px) {
-      #hero-wrap { height: auto; overflow: visible; }
+      #hero-wrap { height: auto; overflow: visible; visibility: visible; }
       #hero-section { transform: none !important; width: auto !important; }
     }
 
@@ -1191,7 +1192,10 @@
       }
 
       // Run after all resources (images) are fully loaded, not before
-      window.addEventListener('load', scaleHero);
+      window.addEventListener('load', function() {
+        scaleHero();
+        wrap.style.visibility = 'visible';
+      });
 
       // Only re-scale when width changes — height-only changes (iPad browser bar
       // hiding/showing on scroll) should not trigger a rescale
